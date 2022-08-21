@@ -1,0 +1,48 @@
+class CaesarCiph:
+    def encrypt(self):
+        #'a' - 97 'z' - 122
+        #'A' - 65 'Z' - 90
+        plainText = input("Enter Text to encrypt:- ")
+        key = int(input("Enter Key position:- "))
+        temp = ''
+       
+        for i in range(len(plainText)):
+            if plainText[i] >= 'a' and plainText[i] <= 'z':
+                temp += (chr((( ord(plainText[i]) + key - 97)%26) + 97)).upper()
+            elif plainText[i] >= 'A' and plainText[i] <= 'Z':
+                temp += (chr((( ord(plainText[i]) + key - 65)%26) + 65)).lower()
+            else:
+                temp += ' '
+        print(temp)
+       
+       
+    def decrypt(self):
+        ciphText = input("Enter Text to decrypt:- ")
+        key = int(input("Enter Key position:- "))
+       
+       
+        temp = ''
+       
+        for i in range(len(ciphText)):
+            if ciphText[i] >= 'a' and ciphText[i] <= 'z':
+                temp += (chr((( ord(ciphText[i]) - key - 97)%26) + 97)).upper()
+            elif ciphText[i] >= 'A' and ciphText[i] <= 'Z':
+                temp += (chr((( ord(ciphText[i]) - key - 65)%26) + 65)).lower()
+            else:
+                temp += ' '
+        print(temp)
+
+
+print("1.Encryption")
+print("2.Decryption")
+
+choice = int(input("Choice:- "))
+
+obj = CaesarCiph()
+
+if choice == 1:
+    obj.encrypt()
+elif choice == 2:
+    obj.decrypt()
+else:
+    print("Wrong option added")
