@@ -1,4 +1,4 @@
-mport java.util.*;
+import java.util.*;
 import java.math.*;
 
 class Main
@@ -11,12 +11,21 @@ class Main
 		int msg=sc.nextInt();
 		double c;
 		BigInteger msgback; 
+		
 		System.out.println("Enter 1st prime number p");
 		p=sc.nextInt();
-		if(is)
-
-           
+		for( i= 2; i < p; i++) {
+        if(p % i == 0)
+        {
+           System.exit(0);
+        }
+        
+            
+        
+        }
 		
+        
+
 		System.out.println("Enter 2nd prime number q");
 		q=sc.nextInt();
 		
@@ -54,17 +63,8 @@ class Main
 		System.out.println(msgback);
 
 	}
+
 	
-static int isPrime(int m)
-    {
-       for(int i= 2; i < p; i++) {
-        if(p % i == 0)
-            System.out.println("The sum is not a prime number.");
-        else 
-            System.out.println("The sum is a prime number.");
-        break;
-        }
-    }
 
 
 	static int gcd(int e, int z)
